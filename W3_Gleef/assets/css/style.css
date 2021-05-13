@@ -1,0 +1,94 @@
+/* Reset Css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Khoi can tinh toan kich thuoc khi co them border hoac padding */
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*
+1. Vi tri
+2. Kich thuoc(width, height)
+3. Mau sac
+4. Kieu dang
+*/
+#main {
+  /*
+    Mac dinh co thuoc tinh block( Chiem phu kin giao dien)
+    */
+}
+#header {
+  height: 46px;
+  background-color: green;
+}
+#header .search-btn {
+  float: right; /* them float xoa di tinh chat box cua the div( tinh chat ke thua full chieu dai) */
+  padding: 0 21px;
+}
+#header .search-btn:hover {
+  background-color: red;
+  cursor: pointer;
+}
+#header .search-icon {
+  color: #fff;
+  font-size: 20px;
+  line-height: 46px;
+}
+#nav {
+  display: inline-block;
+}
+#nav > li {
+  display: inline-block;
+}
+#nav li {
+  position: relative;
+}
+
+#nav > li > a {
+  color: white;
+  text-transform: uppercase;
+}
+#nav li:hover .subnav {
+  display: block;
+}
+
+#nav li a {
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  display: block; /* inline khong set duoc chieu ngang chieu doc. */
+}
+#nav .nav-arrow-down {
+  font-size: 12px;
+}
+/* Dat hover vao the li */
+/* inline khong set duoc chieu ngang chieu doc. */
+#nav > li:hover > a,
+#nav .subnav li:hover {
+  background-color: darkgray;
+  color: aliceblue;
+}
+#nav .subnav {
+  /* display: none; */
+  position: absolute;
+  background-color: aliceblue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  list-style-type: none;
+  display: none;
+  min-width: 160px;
+  top: 101%;
+}
+#nav .subnav a {
+  color: black;
+  padding: 0 12px;
+  line-height: 38px;
+}
+
+#slider {
+  min-height: 500px;
+}
+#content {
+}
+#footer {
+}
