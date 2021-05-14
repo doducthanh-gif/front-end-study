@@ -7,6 +7,12 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+.clear{
+  clear: both; /* Khắc phục khi sử dụng float */
+}
+.text-white{
+  color: #fff!important;
+}
 /*
 1. Vi tri
 2. Kich thuoc(width, height)
@@ -20,7 +26,12 @@ html {
 }
 #header {
   height: 46px;
-  background-color: green;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /*Chiều sâu của các phần tử, phần tử nào nổi lên */
 }
 #header .search-btn {
   float: right; /* them float xoa di tinh chat box cua the div( tinh chat ke thua full chieu dai) */
@@ -86,9 +97,120 @@ html {
 }
 
 #slider {
-  min-height: 500px;
+  margin-top: 46px;
+  background-color: #000;
+  padding-top: 50%; /* Bang 50% chieu ngang cua chinh no */
+  background: url(/assets/img/slider/slider1.jpg) top center / cover no-repeat;
+  /* url(/assets/img/slider/Slider1.jpg) ( background img) top center( background position) 
+   sau dấu gạch chéo sẽ là background size và repeat  */
+  position: relative; /* Trục tọa độ được set ở góc trên bên trái */
 }
-#content {
+#slider .text-content {
+  position: absolute; /*Nhấc content lên 1 layer cao hơn, không chiếm diện 
+   tích dẫn tới padding tăng */
+  color: #fff;
+  bottom: 50px;
+  /* left: 50%;
+   transform: translateX(-50%); Căn giữa bằng position */
+  text-align: center;
+  width: 100%; /*  Cách căn giữa thứ 2 đẩy chiều dài của text bằng 100%  */
+  /* left: 0;
+   right: 0; Tương tự cách trên */
 }
-#footer {
+#slider .text-heading {
+  font-weight: 700;
+  font-size: 24px;
+}
+#slider .text-desc {
+  margin-top: 25px;
+}
+
+#content .content-section {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+#content .section-heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: 4px; /*Khoảng cách chữ */
+  
+  
+}
+#content .section-sub-heading {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 25px;
+  font-style: italic; /*Chữ nghiêng */
+  opacity: 0.6; /*Làm mờ chữ */
+}
+#content .about-text {
+  margin-top: 25px;
+  text-align: justify; /*Căn đều hai bên như bài báo */
+  line-height: 1.6; /*Nếu sử dụng bằng tiếng Anh thì để 1.4 do tiếng việt có thêm dấu */
+
+}
+#content .member-list {
+  margin-top: 48px;
+  /* overflow: hidden; Khắc phục khi sử dụng float */
+}
+#content .member-name {
+  font-size: 15px;
+ 
+}
+#content .member-item{
+  float: left;
+  width: calc(100% / 3); 
+  text-align: center;
+}
+#content .member-img{
+  margin-top: 15px;
+  height: 154px;
+  width: 154px;
+  border-radius: 50px;
+
+}
+/* Tour Section */
+.tour-section{
+  background-color: #000;
+}
+.ticket-list li{
+  font-size: 15px;
+  padding: 11px 16px;
+  border-bottom: 1px solid #ddd;
+  color: #757575;
+
+}
+.ticket-list{
+  background-color: #fff;
+  margin-top: 40px;
+  list-style: none;
+}
+.ticket-list .sold-out{
+  background-color: red;
+  color: white;
+  padding: 3px 4px;
+  margin-left: 16px;
+
+}
+.ticket-list .quantity{
+  /* Khi có thêm tính chất float đối tượng sẽ có tính chất block để có thể đặt được with height
+  và sử dụng được margin âm để điều chỉnh chiều cao */
+  float: right;  
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: white;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    margin-top: -3px;
+
+}
+
+/* Footter Section */
+#content. #footer {
 }
