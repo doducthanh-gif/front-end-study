@@ -21,7 +21,7 @@ html {
   clear: both;
 }
 .pull-right {
-  float: right!important;
+  float: right !important;
 }
 
 .col {
@@ -29,7 +29,7 @@ html {
   padding-right: 8px;
   float: left;
 }
-.btn{
+.btn {
   color: #fff;
   background-color: #000;
   text-decoration: none;
@@ -37,8 +37,12 @@ html {
   display: inline-block;
   margin-top: 18px;
   border: none;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none; 
+  /* fix code khi chay tren iphone */
 }
-.btn:hover{
+.btn:hover {
   color: #000;
   background-color: #757575;
   cursor: pointer;
@@ -58,6 +62,9 @@ html {
 }
 .mt-16 {
   margin-top: 16px !important;
+}
+.mt-32 {
+  margin-top: 32px !important;
 }
 .clear {
   clear: both; /* Khắc phục khi sử dụng float */
@@ -80,7 +87,7 @@ html {
 #main {
   /*
     Mac dinh co thuoc tinh block( Chiem phu kin giao dien)
-    */
+    /* overflow: hidden; Khắc phục khi sử dụng float */
 }
 #header {
   height: 46px;
@@ -90,16 +97,36 @@ html {
   left: 0;
   right: 0;
   z-index: 1; /*Chiều sâu của các phần tử, phần tử nào nổi lên */
+  
 }
-#header .search-btn {
+
+#header .mobile-menu-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#header .search-btn,
+#header .mobile-menu-btn {
   float: right; /* them float xoa di tinh chat box cua the div( tinh chat ke thua full chieu dai) */
   padding: 0 21px;
 }
-#header .search-btn:hover {
+#header .mobile-menu-btn:hover{
+  background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon{
+  color: #000;
+}
+
+
+#header .search-btn:hover
+ {
   background-color: red;
   cursor: pointer;
 }
-#header .search-icon {
+#header .search-icon,
+#header .menu-icon {
   color: #fff;
   font-size: 20px;
   line-height: 46px;
@@ -189,6 +216,9 @@ html {
   margin-right: auto;
   padding-top: 64px;
   padding-bottom: 64px;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 #content .section-heading {
   text-align: center;
@@ -209,8 +239,7 @@ html {
   line-height: 1.6; /*Nếu sử dụng bằng tiếng Anh thì để 1.4 do tiếng việt có thêm dấu */
 }
 #content .member-list {
-  margin-top: 48px;
-  /* overflow: hidden; Khắc phục khi sử dụng float */
+  margin-top: 32px;
 }
 #content .member-name {
   font-size: 15px;
@@ -260,7 +289,7 @@ html {
 }
 /* Tour */
 .tour-list {
-  margin-top: 32px;
+  margin-top: 16px;
   margin-bottom: 48px;
 }
 
@@ -319,7 +348,6 @@ html {
 /* ads section */
 .ads-section img {
   width: 100%;
-
 }
 
 /* Footter Section */
@@ -327,19 +355,18 @@ html {
   padding: 64px 16px;
   text-align: center;
 }
-#footer .social-list{
+#footer .social-list {
   font-size: 24px;
-
 }
-#footer .social-list a{
+#footer .social-list a {
   color: #000;
   opacity: 0.6;
   text-decoration: none;
 }
-#footer .social-list a:hover{
+#footer .social-list a:hover {
   opacity: 0.4;
 }
-#footer .desgin-by{
+#footer .desgin-by {
   margin-top: 15px;
   color: #000;
   opacity: 0.6;

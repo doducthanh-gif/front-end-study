@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glee.f Band</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link
       rel="stylesheet"
       href="/assets/font/themify-icons/themify-icons.css"
@@ -37,6 +38,10 @@
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
         </div>
+
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"></i>
+        </div>
         <!-- End search button -->
       </div>
 
@@ -61,7 +66,7 @@
             bạn trên con đường âm nhạc đó.
           </p>
           <div class="member-list row">
-            <div class="col col-third text-center">
+            <div class=" col col-third s-col-full mt-16 text-center">
               <p class="member-name">ĐỖ ĐỨC THÀNH</p>
               <p class="section-sub-heading">Former President</p>
               <img
@@ -70,7 +75,7 @@
                 class="member-img"
               />
             </div>
-            <div class="col col-third text-center">
+            <div class=" col col-third s-col-full mt-16 text-center">
               <p class="member-name">NGUYỄN VŨ SƠN HÀ</p>
               <p class="section-sub-heading">Former President</p>
               <img
@@ -79,7 +84,7 @@
                 class="member-img"
               />
             </div>
-            <div class="col col-third text-center">
+            <div class=" col col-third s-col-full mt-16 text-center">
               <p class="member-name">HOÀNG THÙY TRANG</p>
               <p class="section-sub-heading">Former President</p>
               <img
@@ -107,7 +112,7 @@
             </ul>
             <!-- Tour -->
             <div class="tour-list row">
-              <div class="col col-third">
+              <div class="mt-16 col col-third s-col-full">
                 <img
                   src="./assets/img/tour/tour1.jpg"
                   alt=""
@@ -120,10 +125,10 @@
                     Show diễn tình nguyện nhằm gây quỹ ủng hộ các bé vùng cao
                     2021
                   </p>
-                  <a href="#" class="btn">Buy Tickets</a>
+                  <a href="#" class="btn s-full-width ">Buy Tickets</a>
                 </div>
               </div>
-              <div class="col-third col">
+              <div class="mt-16 col col-third s-col-full">
                 <img
                   src="./assets/img/tour/tour2.jpg"
                   alt=""
@@ -136,10 +141,10 @@
                     Show diễn tình nguyện nhằm gây quỹ ủng hộ các bé vùng cao
                     2021
                   </p>
-                  <a href="#" class="btn">Buy Tickets</a>
+                  <a href="#" class="btn s-full-width">Buy Tickets</a>
                 </div>
               </div>
-              <div class="col-third col">
+              <div class="mt-16 col col-third s-col-full">
                 <img
                   src="./assets/img/tour/tour4.jpg"
                   alt=""
@@ -152,7 +157,7 @@
                     Show diễn tình nguyện nhằm gây quỹ ủng hộ các bé vùng cao
                     2021
                   </p>
-                  <a href="#" class="btn">Buy Tickets</a>
+                  <a href="#" class="btn s-full-width">Buy Tickets</a>
                 </div>
               </div>
               <div class="clear"></div>
@@ -165,12 +170,12 @@
           <h2 class="section-heading">CONTACT</h2>
           <p class="section-sub-heading">Where words fail, music speaks</p>
           <div class="row contact-content">
-            <div class="col col-half contact-info">
+            <div class="col col-half s-col-full contact-info">
               <p><i class="ti-location-pin"></i> Ha Noi</p>
               <p><i class="ti-mobile"></i> Phone Number: +84395927599</p>
               <p><i class="ti-email"></i> Email: mail@gmail.com</p>
             </div>
-            <div class="col col-half contact-form">
+            <div class="col col-half s-col-full contact-form">
               <form action="">
                 <div class="row">
                   <div class="col col-half">
@@ -207,7 +212,7 @@
                   </div>
                 </div>
                 <input
-                  class="btn mt-16 pull-right"
+                  class="btn mt- pull-right s-full-width"
                   type="submit"
                   value="Send"
                 />
@@ -233,5 +238,37 @@
         <p class="desgin-by">Desgin by DoDucThanh</p>
       </div>
     </div>
+    <script>
+      var headerElement = document.getElementById("header");
+      var mobileMenuElement = document.getElementById("mobile-menu");
+      var headerHeight = header.clientHeight;
+      // Closed/Open Menu
+
+      mobileMenuElement.onclick = function () {
+        var isClosed = header.clientHeight === headerHeight;
+        if (isClosed) {
+          header.style.height = "auto";
+        } else {
+          header.style.height = null;
+        }
+      };
+
+      // AutoMenu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+
+        menuItem.onclick = function (event) {
+          var isParentMenu =
+            this.nextElementSibling &&
+            this.nextElementSibling.classList.contains('subnav');
+          if (isParentMenu) {
+            event.preventDefault();
+          } else {
+            header.style.height = null;
+          }
+        };
+      }
+    </script>
   </body>
 </html>
